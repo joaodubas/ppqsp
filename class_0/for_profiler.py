@@ -21,8 +21,8 @@ def create_table_result(title, results):
         'max': max(results)
     }
     print '\nResultados para: %s' % title
-    print '{0:10} {1:10} {2:10}'.format(*head)
-    print '{min:10.5f} {mean:10.5f} {max:10.5f}'.format(**calc)
+    print '{0:<10s} {1:<10s} {2:<10s}'.format(*head)
+    print '{min:<10.5f} {mean:<10.5f} {max:<10.5f}'.format(**calc)
 
 def profile(stmt='pass', setup='pass'):
     t = Timer(stmt, setup)
@@ -30,6 +30,6 @@ def profile(stmt='pass', setup='pass'):
 
     create_table_result(stmt, r)
 
-print 'Processando uma lista de 1000 elementos. Repetindo 10 vezes, 1000 execuções.\n'
+print 'Processando uma lista de 1000 elementos. Repetindo 10 vezes, 1000 execuções.'
 profile('for_traditional()', 'from __main__ import for_traditional')
 profile('for_listcomp()', 'from __main__ import for_listcomp')
