@@ -67,4 +67,4 @@ if __name__ == '__main__':
     assert resp_list.count(resp_list[0]) == len(resp_list)
 
     for fn in fn_list:
-        profile('{}()'.format(fn), 'from __main__ import {}'.format(fn), fn_name_len=fn_len)
+        profile('{0}()'.format(fn), 'from __main__ import {0}'.format(fn), fn_name_len=fn_len)
